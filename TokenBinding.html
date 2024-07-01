@@ -7,7 +7,7 @@
     <script>
         function testGetSupportedMethods() {
             const requestData = {};
-            __gCrWeb.nativeAPI.getSupportedMethods(requestData).then(response => {
+            chrome.tokenBinding.getSupportedMethods(requestData).then(response => {
                 document.getElementById('output').innerText = "getSupportedMethods response: " + JSON.stringify(response);
             }).catch(error => {
                 document.getElementById('output').innerText = "getSupportedMethods error: " + error;
@@ -16,7 +16,7 @@
 
         function testExecuteNativeRequest() {
             const requestData = {};
-            __gCrWeb.nativeAPI.executeNativeRequest(requestData).then(response => {
+            chrome.tokenBinding.executeNativeRequest(requestData).then(response => {
                 document.getElementById('output').innerText = "executeNativeRequest response: " + JSON.stringify(response);
             }).catch(error => {
                 document.getElementById('output').innerText = "executeNativeRequest error: " + error;
