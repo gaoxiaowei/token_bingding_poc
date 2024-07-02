@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TokenBindng Test</title>
+    <title>TokenBinding Test</title>
     <script>
         function testGetSupportedMethods() {
             const requestData = {};
@@ -16,7 +16,7 @@
 
         function testExecuteNativeRequest() {
             const requestData = {};
-            chrome.tokenBinding.executeNativeRequest(requestData).then(response => {
+            chrome.TokenBinding.executeNativeRequest(requestData).then(response => {
                 document.getElementById('output').innerText = "executeNativeRequest response: " + JSON.stringify(response);
             }).catch(error => {
                 document.getElementById('output').innerText = "executeNativeRequest error: " + error;
@@ -25,7 +25,7 @@
     </script>
 </head>
 <body>
-    <h1>TokenBindng Test</h1>
+    <h1>TokenBinding Test</h1>
     <button onclick="testGetSupportedMethods()">test getSupportedMethods</button>
     <button onclick="testExecuteNativeRequest()">test executeNativeRequest</button>
     <div id="output" style="margin-top: 20px; white-space: pre-wrap;"></div>
