@@ -16,7 +16,7 @@
 
         function testExecuteNativeRequest() {
             const requestData = {};
-            chrome.TokenBinding.executeNativeRequest(requestData).then(response => {
+            chrome.tokenBinding.executeNativeRequest(requestData).then(response => {
                 document.getElementById('output').innerText = "executeNativeRequest response: " + JSON.stringify(response);
             }).catch(error => {
                 document.getElementById('output').innerText = "executeNativeRequest error: " + error;
