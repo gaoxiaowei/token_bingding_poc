@@ -6,7 +6,7 @@
     <title>TokenBinding Test</title>
     <script>
         function testGetSupportedContracts() {
-            const requestData = {};
+            const requestData = { brokerId: "MicrosoftEntra"};
             navigator.platformAuthentication.getSupportedContracts(requestData).then(response => {
                 document.getElementById('output').innerText = "getSupportedContracts response: " + JSON.stringify(response);
             }).catch(error => {
@@ -15,7 +15,7 @@
         }
 
         function testExecuteGetToken() {
-            const requestData = {};
+            const requestData = { brokerId: "MicrosoftEntra",accountId:"account",authority:"authority",scope:"scope",redirectUri:"redirect",correlationId:"correlation",isSecurityTokenService:true,state:"state"};
             navigator.platformAuthentication.executeGetToken(requestData).then(response => {
                 document.getElementById('output').innerText = "executeGetToken response: " + JSON.stringify(response);
             }).catch(error => {
@@ -24,7 +24,7 @@
         }
 
         function testExecuteSignOut() {
-            const requestData = {};
+            const requestData = { brokerId: "MicrosoftEntra",accountId:"account"};
             navigator.platformAuthentication.executeSignOut(requestData).then(response => {
                 document.getElementById('output').innerText = "executeSignOut response: " + JSON.stringify(response);
             }).catch(error => {
@@ -33,7 +33,7 @@
         }
 
         function testExecuteGetCookies() {
-            const requestData = {};
+            const requestData = { brokerId: "MicrosoftEntra",accountId:"account"};
             navigator.platformAuthentication.executeGetCookies(requestData).then(response => {
                 document.getElementById('output').innerText = "executeGetCookies response: " + JSON.stringify(response);
             }).catch(error => {
