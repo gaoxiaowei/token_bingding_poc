@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TokenBinding Test</title>
+    <script>
+        function testGetSupportedContracts() {
+            const requestData = {};
+            navigator.platformAuthentication.getSupportedContracts(requestData).then(response => {
+                document.getElementById('output').innerText = "getSupportedContracts response: " + JSON.stringify(response);
+            }).catch(error => {
+                document.getElementById('output').innerText = "getSupportedContracts error: " + error;
+            });
+        }
+
+        function testExecuteGetToken() {
+            const requestData = {};
+            navigator.platformAuthentication.executeGetToken(requestData).then(response => {
+                document.getElementById('output').innerText = "executeGetToken response: " + JSON.stringify(response);
+            }).catch(error => {
+                document.getElementById('output').innerText = "executeGetToken error: " + error;
+            });
+        }
+
+        function testExecuteSignOut() {
+            const requestData = {};
+            navigator.platformAuthentication.executeSignOut(requestData).then(response => {
+                document.getElementById('output').innerText = "executeSignOut response: " + JSON.stringify(response);
+            }).catch(error => {
+                document.getElementById('output').innerText = "executeSignOut error: " + error;
+            });
+        }
+
+        function testExecuteGetCookies() {
+            const requestData = {};
+            navigator.platformAuthentication.executeGetCookies(requestData).then(response => {
+                document.getElementById('output').innerText = "executeGetCookies response: " + JSON.stringify(response);
+            }).catch(error => {
+                document.getElementById('output').innerText = "executeGetCookies error: " + error;
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <h1>TokenBinding Test</h1>
+    <button onclick="testGetSupportedContracts()">test testGetSupportedContracts</button>
+    <button onclick="testExecuteGetToken()">test testExecuteGetToken</button>
+    <button onclick="testExecuteSignOut()">test testExecuteSignOut</button>
+    <button onclick="testExecuteGetCookies()">test executeGetCookies</button>
+    <div id="output" style="margin-top: 20px; white-space: pre-wrap;"></div>
+</body>
+</html>
