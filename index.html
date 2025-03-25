@@ -15,7 +15,7 @@
         }
 
         function testExecuteGetToken() {
-            const requestData = { brokerId: "MicrosoftEntra",accountId:"account",authority:"authority",scope:"scope",redirectUri:"redirect",correlationId:"correlation",isSecurityTokenService:true,state:"state"};
+            const requestData = { brokerId: "MicrosoftEntra",accountId:"account",authority:"authority",scope:"scope",redirectUri:"https://redirect.com",correlationId:"correlation",isSecurityTokenService:true,state:"state"};
             navigator.platformAuthentication.executeGetToken(requestData).then(response => {
                 document.getElementById('output').innerText = "executeGetToken response: " + JSON.stringify(response);
             }).catch(error => {
@@ -33,7 +33,7 @@
         }
 
         function testExecuteGetCookies() {
-            const requestData = { brokerId: "MicrosoftEntra",accountId:"account"};
+            const requestData = { brokerId: "MicrosoftEntra",uri:"https://login.microsoftonline.com"};
             navigator.platformAuthentication.executeGetCookies(requestData).then(response => {
                 document.getElementById('output').innerText = "executeGetCookies response: " + JSON.stringify(response);
             }).catch(error => {
