@@ -32,7 +32,7 @@
             });
         }
 
-        function testExecuteGetCookies() {
+        function testExecuteApplyCookies() {
             const requestData = { brokerId: "MicrosoftEntra",uri:"https://login.microsoftonline.com"};
             navigator.platformAuthentication.executeApplyCookies(requestData).then(response => {
                 document.getElementById('output').innerText = "executeGetCookies response: " + JSON.stringify(response);
