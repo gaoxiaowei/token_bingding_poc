@@ -6,8 +6,7 @@
     <title>TokenBinding Test</title>
     <script>
         function testGetSupportedContracts() {
-            const requestData = { brokerId: "MicrosoftEntra"};
-            navigator.platformAuthentication.getSupportedContracts(requestData).then(response => {
+            navigator.platformAuthentication.getSupportedContracts("MicrosoftEntra").then(response => {
                 document.getElementById('output').innerText = "getSupportedContracts response: " + JSON.stringify(response);
             }).catch(error => {
                 document.getElementById('output').innerText = "getSupportedContracts error: " + error;
